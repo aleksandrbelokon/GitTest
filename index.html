@@ -1,13 +1,71 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу-->
 <!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Привет GIT!</title>
-</head>
-<body>
-  <p>Новый абзац</p>
-  <h1>Заголовок 1</h1>
-</body>
+  <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+  <head>
+    <!-- Кодировка страницы -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Заголовок страницы в браузере -->
+    <title>Привет GIT!</title>
+  </head>
+  <!-- Отображаемое тело страницы -->
+  <body>
+    <!-- !Создаем форму на странице -->
+    <form action="#" method="GET" enctype="multipart/form-data">
+      <div> <!-- !Текстовое поле ввода -->
+        <input placeholder="Введите текст" type="text" name="TextEdit1" value="">
+      </div>
+      <div> <!-- !Поле ввода паролей -->
+        <input type="password" name="PasswordEdit1" value="">
+      </div>
+      <div> <!-- !Группа радиокнопок -->
+        <p> <input type="radio" name="beer" value="lager"> Светлое пиво </p>
+        <p> <input checked type="radio" name="beer" value="dark"> Темное пиво </p> <!-- Выбранно по умолчанию -->
+      </div>
+      <br>
+      <div> <!-- !Вторая группа радиокнопок -->
+        <p> <input checked type="radio" name="beer2" value="lager"> Светлое пиво 2 </p> <!-- Выбранно по умолчанию -->
+        <p> <input type="radio" name="beer2" value="dark"> Темное пиво 2 </p>
+      </div>
+      <br>
+      <div> <!-- !Группа флажков -->
+        <p> <input checked type="checkbox" name="car1" value="yes"> Наличие авто 1 </p> <!-- Выбранно по умолчанию -->
+        <p> <input type="checkbox" name="car2" value="yes"> Наличие авто 2 </p> 
+        <p> <input disabled type="checkbox" name="car3" value="yes"> Наличие авто 3 </p> <!-- Поле не активное disabled -->
+        <p> <input type="checkbox" name="car4" value="yes"> Наличие авто 4 </p>  
+      </div>
+      <br>
+      <div>  <!-- !Кнопка выбора файла -->
+        <p> <input type="file" name="foto"> </p>  
+      </div>
+      <br>
+      <div>  <!-- !Поле ввода большого текста -->
+        <textarea placeholder="Введите текст" name="text" id="AreaEdit" cols="30" rows="10"></textarea>
+      </div>
+      <br>
+      <div>  <!-- !Выпадающий список -->
+        <select name="color" id="ColorsSelect">
+          <option value="red">Красный</option>
+          <option selected value="yellow">Жолтый</option> <!-- Выбранно по умолчанию -->
+          <option value="blue">Голубой</option>
+        </select>
+      </div>
+      <br>
+      <div>  <!-- !Список с множественным выбором атрибут multiple -->
+        <select multiple name="color2" id="ColorsSelect">
+          <option value="red">Красный</option>
+          <option value="yellow">Жолтый</option>
+          <option value="blue">Голубой</option>
+        </select>
+      </div> 
+      <div>
+        <button type="submit">Отправить</button>  <!-- !При нажатии вся форма отправится на сервер атрибут "submit" -->
+        <button type="reset">Отправить</button>  <!-- !При нажатии форма очистится атрибут "reset" -->
+      </div>
+
+    </form>
+  </body>
 </html>
