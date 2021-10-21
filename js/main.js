@@ -1,12 +1,17 @@
-function checkForm(el) 
+document.getElementById('main-form').addEventListener("submit", checkForm) //Отслеживаем событие submit (отправить на сервер)
+                                                                           //через слушатель, ужираем js код из html
+function checkForm(event) 
 {
-    
+    var el = document.getElementById('main-form');
+
     var name = el.name.value;     // Получает имя
     var pass = el.pass.value;     // Получаем пароль
     var repass = el.repass.value; // Получаем подтрержденный пароль
     var state = el.state.value;   // Получаем пол
     
     var fail = "";
+
+    event.preventDefault(); //Отключаем стандартное поведение события submit что-бы форма не перезагружалаь 
     
     if (name == "" || pass == "" || state == "") 
         fail = "Заполните все поля";
@@ -17,11 +22,11 @@ function checkForm(el)
     else if (pass.split("&").length > 1) 
         fail = "Недопустимый символ &";
     
-    if (fail != "") {
+    if (fail != "") 
+    {
         document.getElementById('error').innerHTML = fail + "<br><br>";
-        return false;
-    } else {
-        alert("Все данные корректно заполненны")
-        return true;    
+    } else 
+    {
+        alert("Все данные корректно заполненны")  
     }   
 }
