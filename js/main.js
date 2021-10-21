@@ -11,7 +11,7 @@ function checkForm(event)
     
     var fail = "";
 
-    event.preventDefault(); //Отключаем стандартное поведение события submit что-бы форма не перезагружалаь 
+    event.preventDefault(); //!Отключаем стандартное поведение события submit что-бы форма не перезагружалаь 
     
     if (name == "" || pass == "" || state == "") 
         fail = "Заполните все поля";
@@ -27,6 +27,8 @@ function checkForm(event)
         document.getElementById('error').innerHTML = fail + "<br><br>";
     } else 
     {
-        alert("Все данные корректно заполненны")  
+        alert("Все данные корректно заполненны");
+        //!Глобальный объект свойств браузера, в случаи коректных данныз перебросить на страницу testJS.html
+        window.location = 'testJS.html';  
     }   
 }
